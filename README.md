@@ -63,8 +63,20 @@ Mailzugangsdaten
 
       nano /home/pi/Device/NodeRed/env.txt
 
+# PiHat
+
+## MDB Daemon 
+Der Raspi benutzt einen MDB PiHat um den Münzzähler (und das Kartenterminal) zu steuern. DIes ist die Doku davon:
+
+https://docs.qibixx.com/mdb-products/mdb-payment-master-daemon
+
+## Firmware Update
+https://docs.qibixx.com/mdb-products/mdb-pi-hat-firmware-update
+
+# Fernwartung
+
+In "/home/pi/Automat/OpenVPN/" befindet sich eine Openvpn Konfigurationsdatei. Die kann durch eine andere ersetzt werden, Das Aufbauen einer VPN Verbindung muss ggf. im Node-Red aktiviert werden. Danach kann der Raspi, wenn er Internet hat im VPN von anderen Geräten im VPN verwaltet werden.
 
 # Offene ToDos
 
  * Cloud Verbindung 
- * Sinnvolle Fernwartung (ohne PC beim Nutzer)
