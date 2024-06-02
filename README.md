@@ -23,22 +23,8 @@ Mit STRG+ALT+F6 wieder retour
 # Bekannte Probleme
 ## Kommunikation zwischen RaspberryPi und Münzzähler
 Es ist bekannt, dass der Betrag am Bildschirm nicht stimmt, wenn 2 Münzen gleichzeitig eingeworfen werden. 
-Im Log findet sich:
 
-      START,10.6
-      NEWVEND,10.6START,10.7
-      NEWVEND,10.6
-
-Es sollte so aussehen:
-
-      NEWVEND,10.6
-      START,10.6
-      NEWVEND,10.7
-      START,10.7
-
-Dies liegt höchstwahrscheinlich daran, dass die beiden Nachrichten gleichzeitig in verschiedene Richtungen am BUS gesendet werden. Eine mögliche Lösung wäre in paymentMasterDaemon.lua:288, nicht sofort zu senden, sondern erst eine Antwort (oder eine fixe Zeit) abzuwarten anstelle von
-
-      sendToClient("START," .. tostring(newCredit) .. "\n")
+Siehe Kommunikation.md
 
 ## Kommunikation zwischen Münzzähler und RaspberyyPi beobachten
       cd /home/pi/Automat/DEBUG/LIQUIDUS/Logging/mdbLog
@@ -77,6 +63,16 @@ https://docs.qibixx.com/mdb-products/mdb-pi-hat-firmware-update
 
 In "/home/pi/Automat/OpenVPN/" befindet sich eine Openvpn Konfigurationsdatei. Die kann durch eine andere ersetzt werden, Das Aufbauen einer VPN Verbindung muss ggf. im Node-Red aktiviert werden. Danach kann der Raspi, wenn er Internet hat im VPN von anderen Geräten im VPN verwaltet werden.
 
+# Automat Aufbau
+
+Das Herzstück bildet ein iPC (z.B. CX8190). Der hat ein Windows 7 CE Embedded drauf installiert, da drinnen läuft eine Softwareumgebung die einiges tut:
+Webserver (Anzeige am Automaten)
+Ethernet (Kommunikation mit Raspi)
+Programmierung und Aktualisierung des auch eingebauten SPS
+
+Er kann nicht über mdbd mit dem Münzzähler und dem Kartenleser kommunizieren, deswegen macht der Raspi da eine Brücke. Er kann auch nicht direkt den Bildschirm ansteueren, deswegen zeigt der Raspi einen Webbrowser an, der wiederum die Seite vom iPC aufruft.
+
 # Offene ToDos
 
  * Cloud Verbindung 
+ * Schneller Münzeinwurf Fehlersuche
