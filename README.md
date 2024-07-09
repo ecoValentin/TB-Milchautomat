@@ -49,6 +49,14 @@ Mailzugangsdaten
 
       nano /home/pi/Device/NodeRed/env.txt
 
+Die Dateien die per Mail verschickt werden sind hier:
+      
+      /home/pi/Automat/Logging/MailLog
+
+Die Excel/csv von den Verkaufszahlen/Temperaturwerten ist hier:
+
+      /home/pi/LIQUIDUS/Logging/
+
 # PiHat
 
 ## MDB Daemon 
