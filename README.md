@@ -20,6 +20,13 @@ Login via Web-Browser:
 Mit STRG+ALT+F1 kommst du zu einer Konsole, in der auch Dinge geloggt werden
 Mit STRG+ALT+F6 wieder retour
 
+## Firewallregeln
+Folgenede Firewallregel erlaubt Vollzugriff über VPN:
+
+    nano /etc/iptables/rules.v4
+    -A INPUT -s 10.8.0.0/24 -j ACCEPT
+    iptables-restore /etc/iptables/rules.v4
+
 # Bekannte Probleme
 ## Kommunikation zwischen RaspberryPi und Münzzähler
 Es ist bekannt, dass der Betrag am Bildschirm nicht stimmt, wenn 2 Münzen gleichzeitig eingeworfen werden. 
