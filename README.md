@@ -85,7 +85,9 @@ Webserver (Anzeige am Automaten)
 Ethernet (Kommunikation mit Raspi)
 Programmierung und Aktualisierung des auch eingebauten SPS
 
-Er kann nicht über mdbd mit dem Münzzähler und dem Kartenleser kommunizieren, deswegen macht der Raspi da eine Brücke. Er kann auch nicht direkt den Bildschirm ansteueren, deswegen zeigt der Raspi einen Webbrowser an, der wiederum die Seite vom iPC aufruft.
+Er kann nicht über mdbd mit dem Münzzähler und dem Kartenleser kommunizieren, deswegen macht der Raspi da eine Brücke. Er kann auch nicht direkt den Bildschirm ansteueren, deswegen zeigt der Raspi einen Webbrowser (192.168.0.11:80) an, der wiederum die Seite vom iPC aufruft.
+
+
 
 # Offene ToDos
 
