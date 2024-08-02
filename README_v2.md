@@ -42,5 +42,9 @@ Der Raspi zeigt einen Webbrowser (localhost:8080) an.
 # Versand Monatsabrechnung
 
 Der ursprüngliche Versand funktioniert nichtmehr, da der notwendige Server nicht mehr reagiert. Als Alternative kann man monatliche Verkaufszahlen aus den Logs ermitteln und direkt vom Raspi versenden. Dazu kann das Skript "sales_per_month.py" verwendet werden.
+Folgender Cronjob kann hierfür verwendet werden:
+
+    1 0 1 * * python3 /home/pi/Automat/PythonScripts/sales_per_month.py $(date -d "yesterday" +\%Y-\%m)
+
 
 # Offene ToDos
