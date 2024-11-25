@@ -5,17 +5,19 @@ Auf der zweiten Partition die Datei /home/pi/.ssh/autorized_keys um einen Key er
 
 ## NodeRed Zugang:
 Neuen PW hash generieren und in den Einstellungen von beiden NodeRed Instanzen einfügen (SSH):
-   node-red-admin hash-pw
 
-   nano home/pi/Automat/NodeRed/nodered1880_legal/settings.js
-   nano home/pi/Automat/NodeRed/nodered1881_legal/settings.js
+    node-red admin hash-pw
 
-   sudo systemctl restart nodered
+    nano home/pi/Automat/NodeRed/nodered1880_legal/settings.js
+    nano home/pi/Automat/NodeRed/nodered1881_legal/settings.js
+
+    sudo systemctl restart nodered
 
 Login via Web-Browser:
-   https://<IP des Automaten>:1880 bzw. https://<IP des Automaten>:1881
-   User: admin
-   PW: <pw>
+
+    https://<IP des Automaten>:1880 bzw. https://<IP des Automaten>:1881
+    User: admin
+    PW: <pw>
 
 ## Umschalten zwischen Konsole und Bildschirm
 Mit STRG+ALT+F1 kommst du zu einer Konsole, in der auch Dinge geloggt werden

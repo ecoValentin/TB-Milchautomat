@@ -5,7 +5,7 @@ Auf der zweiten Partition die Datei /home/pi/.ssh/autorized_keys um einen Key er
 
 ## NodeRed Zugang:
 Neuen PW hash generieren und in den Einstellungen einfügen (SSH):
-   node-red-admin hash-pw
+   node-red admin hash-pw
 
    nano ~/.node-red/settings.js
 
