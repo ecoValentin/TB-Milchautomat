@@ -1,9 +1,11 @@
 # Zugang zum Raspberry PI
+
 ## SSH Zugang verschaffen
 
 Auf der zweiten Partition die Datei /home/pi/.ssh/autorized_keys um einen Key erweitern, dann hast du SSH (shell) Zugang und dann hast du mit "sudo su" auch Adminrechte und kannst alle PWs ändern.
 
 ## NodeRed Zugang:
+
 Neuen PW hash generieren und in den Einstellungen von beiden NodeRed Instanzen einfügen (SSH):
 
     node-red admin hash-pw
@@ -20,10 +22,12 @@ Login via Web-Browser:
     PW: <pw>
 
 ## Umschalten zwischen Konsole und Bildschirm
+
 Mit STRG+ALT+F1 kommst du zu einer Konsole, in der auch Dinge geloggt werden
 Mit STRG+ALT+F6 wieder retour
 
 ## Firewallregeln
+
 Folgenede Firewallregel erlaubt Vollzugriff über VPN:
 
     nano /etc/iptables/rules.v4
@@ -48,5 +52,13 @@ Folgender Cronjob kann hierfür verwendet werden:
 
     1 0 1 * * python3 /home/pi/Automat/PythonScripts/sales_per_month.py $(date -d "yesterday" +\%Y-\%m)
 
+# Versand Füllstand
+
+Der ursprüngliche Versand via Aoo funktioniert nichtmehr, da der notwendige Server nicht mehr reagiert. Als Alternative kann man den Füllstand aus dem Automaten auslesen und per Mail versenden. Dazu kann das Skript "fill_daily.py" verwendet werden.
+Folgender Cronjob kann hierfür verwendet werden:
+
+    5 17 * * * python3 /home/pi/Automat/PythonScripts/fill_daily.py $(date -d "today" +\%Y-\%m-\%d)
+
+Achtung! NodeRed ibt den Füllstand nicht aus, man muss diese Funktion erst hinzufügen.
 
 # Offene ToDos
