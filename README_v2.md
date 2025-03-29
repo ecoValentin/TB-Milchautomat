@@ -13,7 +13,8 @@ Neuen PW hash generieren und in den Einstellungen von beiden NodeRed Instanzen e
     nano home/pi/Automat/NodeRed/nodered1880_legal/settings.js
     nano home/pi/Automat/NodeRed/nodered1881_legal/settings.js
 
-    sudo systemctl restart nodered
+    sudo systemctl restart nodered1880
+    sudo systemctl restart nodered1881
 
 Login via Web-Browser:
 
